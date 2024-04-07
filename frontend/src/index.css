@@ -1,0 +1,100 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.App {
+  background-color: rgb(99, 102, 110);
+  height: 100vh;
+}
+
+.navbar-container {
+  display: flex;
+  background: white;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  height: 10vh;
+  align-items: center;
+}
+
+.navbar-container a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.player-container {
+  display: flex;
+}
+
+.player-form {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  background: white;
+  border-radius: 7px;
+  width: calc(100% / 2);
+  max-width: 400px;
+}
+
+.player-list {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  border-radius: 7px;
+  width: calc(100% / 2);
+  max-width: 400px;
+}
+
+.player-list-item {
+  display: flex;
+  padding: 5px;
+}
+
+.player-list-item h4 {
+  padding-right: 5px;
+}
+
+.player-list-item p {
+  padding-right: 5px;
+}
+
+/* Team Container styles */
+
+.team-container {
+  margin-top: 50px;
+  display: flex;
+}
+
+.team-list {
+  text-decoration: none;
+  background-color: white;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.team-list-collection {
+  display: flex;
+  padding: 10px;
+  list-style: none;
+}
+
+.team-list button {
+  max-width: 100px;
+  max-height: 40px;
+  margin: 40px;
+}
+
+.team-list-collection h3 {
+  margin: 10px;
+}
+
+.team-list-unit li {
+  text-decoration: none;
+  margin: 10px;
+}
