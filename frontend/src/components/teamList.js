@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import fetchPlayers from "../utils/fetchPlayers";
+import fetchPlayers from "../utils/playerApi";
 import formTeams from "../utils/formTeams";
 
 const TeamList = () => {

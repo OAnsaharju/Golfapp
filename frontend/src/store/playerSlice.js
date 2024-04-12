@@ -1,10 +1,29 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import fetchPlayers from "../utils/fetchPlayers";
+import fetchPlayers from "../utils/playerApi";
+import { postPlayer } from "../utils/playerApi";
 
 export const fetchPlayersAsync = createAsyncThunk(
   "player/fetchPlayers",
   async () => {
     return fetchPlayers();
+  }
+);
+
+export const addPlayerAsync = createAsyncThunk(
+  "player/addPlayer",
+  async (playerData) => {
+    const response = await postPlayer(playerData);
+    return response;
+  }
+);
+
+export const deletePlayerAsync = createAsyncThunk(
+  "player/deletePlayer",
+  async (playerId) => {
+    await fetch(`http://localhost:4000/api/players/${playerId}`, {
+      method: "DELETE",
+    });
+    return playerId;
   }
 );
 
@@ -37,10 +56,20 @@ const playerSlice = createSlice({
       .addCase(fetchPlayersAsync.fulfilled, (state, action) => {
         state.loading = false;
         state.players = action.payload;
+        console.log(
+          "action.payload when fetching after adding: ",
+          action.payload
+        );
       })
       .addCase(fetchPlayersAsync.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
+      })
+      .addCase(deletePlayerAsync.fulfilled, (state, action) => {
+        state.loading = false;
+        state.players = state.players.filter(
+          (player) => player.id !== action.payload
+        );
       });
   },
 });

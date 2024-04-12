@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addPlayer } from "../store/playerSlice";
+import { addPlayerAsync, fetchPlayersAsync } from "../store/playerSlice";
 
 export const PlayerForm = ({ player }) => {
   const dispatch = useDispatch();
@@ -31,8 +31,8 @@ export const PlayerForm = ({ player }) => {
 
     console.log("Payload being dispatched: ", playerData);
 
-    dispatch(addPlayer(playerData));
-
+    await dispatch(addPlayerAsync(playerData));
+    dispatch(fetchPlayersAsync());
     setName("");
     setHcp("");
     setClub("");

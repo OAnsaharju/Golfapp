@@ -11,7 +11,7 @@ router.get("/players/", async (req, res) => {
     const data = await Model.find();
     res.json(data);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ mssg: "Error" });
   }
 });
 
@@ -32,7 +32,7 @@ router.delete("/players/:id", async (req, res) => {
     const data = await Model.findByIdAndDelete(id);
     res.status(200).json({ mssg: `Player was deleted, ${data.name}` });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error });
   }
 });
 
@@ -88,17 +88,6 @@ router.post("/teams/", async (req, res) => {
     res.status(200).json(team);
   } catch (error) {
     res.status(400).json({ error: message.error });
-  }
-});
-
-// get Stats
-
-router.get("/stats/", async (req, res) => {
-  try {
-    const data = await statsModel.find();
-    res.status(200).json(data);
-  } catch (error) {
-    res.status(400).json({ error: mssg.error });
   }
 });
 

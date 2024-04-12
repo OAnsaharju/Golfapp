@@ -1,35 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { fetchPlayersAsync, deletePlayerAsync } from "../store/playerSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const PlayerList = () => {
-  const [players, setPlayers] = useState([]);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://localhost:4000/api/players");
-      const data = await response.json();
-      setPlayers(data);
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
+  const dispatch = useDispatch();
+  const players = useSelector((state) => state.player.players);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchPlayersAsync());
+  }, [dispatch]);
 
-  const handleClick = async (id) => {
-    try {
-      await fetch(`http://localhost:4000/api/players/${id}`, {
-        method: "DELETE",
-      });
-      setPlayers(players.filter((player) => player._id !== id));
-    } catch (error) {
-      console.log("Error deleting player:", error);
-    }
-  };
-
-  const handleAddPlayer = async () => {
-    await fetchData();
+  const handleDelete = (id) => {
+    dispatch(deletePlayerAsync(id)).then(() => {
+      dispatch(fetchPlayersAsync());
+    });
   };
 
   return (
@@ -40,7 +24,7 @@ const PlayerList = () => {
           <h4>Name:</h4> <p>{player.playerinfo.name}</p>
           <h4>Hcp: </h4> <p>{player.playerinfo.hcp}</p>
           <h4>Club:</h4> <p>{player.playerinfo.club}</p>
-          <button onClick={() => handleClick(player._id)}>Delete</button>
+          <button onClick={() => handleDelete(player._id)}>Delete</button>
         </div>
       ))}
     </div>
