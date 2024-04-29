@@ -19,11 +19,17 @@ const PlayerList = () => {
   return (
     <div className="player-list">
       <h2>Player list</h2>
+      <div className="player-list-labels">
+        <h4>Name:</h4>
+        <h4>Hcp:</h4>
+        <h4>Club:</h4>
+        <h4>Remove :</h4>
+      </div>
       {players.map((player) => (
         <div className="player-list-item" key={player._id}>
-          <h4>Name:</h4> <p>{player.playerinfo.name}</p>
-          <h4>Hcp: </h4> <p>{player.playerinfo.hcp}</p>
-          <h4>Club:</h4> <p>{player.playerinfo.club}</p>
+          <p>{player.playerinfo.name}</p>
+          <p>{player.playerinfo.hcp}</p>
+          <p>{player.playerinfo.club}</p>
           <button onClick={() => handleDelete(player._id)}>Delete</button>
         </div>
       ))}

@@ -11,21 +11,22 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="App">
+        <div className="app">
+          <div className="background-image"></div>
+          <div className="overlay"></div>
           <Navbar />
-          <div className="player-container">
-            <Switch>
-              <Route path="/stats">
-                <Stats />
-              </Route>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
-            </Switch>
-          </div>
+
+          <Switch>
+            <Route path="/stats">
+              <Stats />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
         </div>
       </Router>
     </Provider>

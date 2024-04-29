@@ -44,7 +44,8 @@ export const PlayerForm = ({ player }) => {
   };
   return (
     <form className="player-form" onSubmit={handleSubmit}>
-      <h1>Player form</h1>
+      <h2>Player form</h2>
+      <p> * = not required</p>
       <label className="form-label">
         Name:
         <input
@@ -76,7 +77,7 @@ export const PlayerForm = ({ player }) => {
       </label>
 
       <label className="form-label">
-        Wins: * not required
+        Wins: *
         <input
           type="number"
           value={wins}
@@ -85,7 +86,7 @@ export const PlayerForm = ({ player }) => {
       </label>
 
       <label className="form-label">
-        Attendance: * not required
+        Attendance: *
         <input
           type="number"
           value={attendance}
@@ -94,7 +95,7 @@ export const PlayerForm = ({ player }) => {
       </label>
 
       <label className="form-label">
-        Worst Placement: * not required
+        Worst Placement: *
         <input
           type="number"
           value={worstplacement}
@@ -103,7 +104,7 @@ export const PlayerForm = ({ player }) => {
       </label>
 
       <label className="form-label">
-        Best Score: * not required
+        Best Score:*
         <input
           type="number"
           value={bestscore}
@@ -112,7 +113,7 @@ export const PlayerForm = ({ player }) => {
       </label>
 
       <label className="form-label">
-        Worst Score: * not required
+        Worst Score: *
         <input
           type="number"
           value={worstscore}

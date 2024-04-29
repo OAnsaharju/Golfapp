@@ -1,118 +1,291 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
-.App {
-  background-color: rgb(99, 102, 110);
-  height: 100vh;
+/* Styles for Home Page */
+
+.app {
+  position: relative;
 }
 
-.navbar-container {
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../public/Home-background.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.home {
   display: flex;
-  background: white;
-  justify-content: space-evenly;
-  margin-bottom: 50px;
-  height: 10vh;
-  align-items: center;
+  flex-direction: column;
 }
 
-.navbar-container a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
+/* Styles for Navbar component */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 15vh;
+  width: 80%;
+  margin: auto;
+  background-color: rgba(0, 142, 73, 0.744);
+  border-radius: 0 0 10px 10px;
 }
+
+.navbar-logo {
+  margin-left: 5vh;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: lighter;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 2vh;
+  width: 40vh;
+}
+
+.navbar-links a {
+  margin-right: 3vh;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  color: white;
+  border-radius: 6px;
+  min-width: 40px;
+}
+
+.navbar-links a:hover {
+  color: rgb(247, 199, 0);
+}
+
+/* Styles for Player Container */
 
 .player-container {
   display: flex;
+  justify-content: center;
+  height: 45vh;
+  width: 100%;
 }
+
+/* Styles for Player Form */
 
 .player-form {
-  border: solid 1px black;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  padding: 20px;
-  background: white;
-  border-radius: 7px;
-  width: calc(100% / 2);
-  max-width: 400px;
+  width: 40%;
+  height: 50vh;
+  align-items: center;
+  overflow-y: auto;
 }
 
+.player-form h2,
+.player-form p {
+  padding-top: 10px;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.form-label {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.536);
+  padding: 4px;
+  min-width: 200px;
+  margin-top: 4px;
+  border-radius: 6px;
+}
+.form-label input {
+  margin-left: 3px;
+  max-width: 50px;
+  min-width: 10px;
+}
+.player-form button {
+  margin-top: 6px;
+  padding: 6px;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.player-form button:hover {
+  background: rgb(247, 199, 0);
+}
+
+/* Styles for Player List  */
+
 .player-list {
-  border: solid 1px black;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  width: 40%;
+  height: 50vh;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.player-list h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.player-list-labels {
+  display: flex;
+  justify-content: space-between;
   background-color: white;
-  border-radius: 7px;
-  width: calc(100% / 2);
-  max-width: 400px;
+  border: solid black 1px;
+  width: 20vw;
+  padding: 4px;
+  min-width: 210px;
 }
 
 .player-list-item {
+  background-color: white;
   display: flex;
-  padding: 5px;
+  justify-content: space-between;
+  border: solid 1px black;
+  padding: 4px;
+  width: 20vw;
+  min-width: 210px;
 }
 
 .player-list-item h4 {
-  padding-right: 5px;
+  margin-left: 4px;
 }
 
 .player-list-item p {
-  padding-right: 5px;
+  margin: 0 4px 0 4px;
+  color: black;
 }
-
-/* Team Container styles */
-
-.team-container {
-  margin-top: 50px;
-  display: flex;
-}
+/* Styles for Team List */
 
 .team-list {
-  text-decoration: none;
-  background-color: white;
-  border-radius: 7px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  width: 80%;
+  margin: auto;
+  height: 30vh;
+  justify-content: space-evenly;
+  background-color: rgba(0, 142, 73, 0.681);
+  border-radius: 10px 10px 0 0;
+}
+
+.team-list button {
+  width: 5vw;
+  height: 30px;
+  min-width: 75px;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.team-list button:hover {
+  background: rgb(247, 199, 0);
 }
 
 .team-list-collection {
   display: flex;
+  max-width: fit-content;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 10px;
   padding: 10px;
-  list-style: none;
 }
 
-.team-list button {
-  max-width: 100px;
-  max-height: 40px;
-  margin: 40px;
+.team-list-collection li {
+  list-style-type: none;
+  margin: 5px;
 }
 
-.team-list-collection h3 {
-  margin: 10px;
+.team-list-team-unit {
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 6px;
 }
 
-.team-list-unit li {
-  text-decoration: none;
-  margin: 10px;
+/* Styles For Footer */
+
+.home-page-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: rgba(0, 142, 73, 0.681);
+  width: 80%;
+  margin: auto;
 }
 
-/* stats styles */
+.home-page-footer p {
+  color: white;
+}
+
+.home-page-footer a {
+  color: white;
+  padding-left: 4px;
+  transition: 0.4s;
+}
+.home-page-footer a:hover {
+  color: rgb(247, 199, 0);
+}
+
+/* Styles for Statistics */
 
 .stat-list-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  max-height: 80vh;
+  border-radius: 11px;
 }
 
-.player-stat-list {
+.stats-main-label {
   display: flex;
-  margin-left: auto;
-  padding: 10px;
+  justify-content: center;
+  margin: 5px;
 }
 
-.player-stat-list h4 {
-  padding: 0 5px 0 5px;
+.stat-collection {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.player-stat-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-stat-items h4 {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.player-stat-items p {
+  padding: 4px;
 }

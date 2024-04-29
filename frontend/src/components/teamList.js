@@ -19,12 +19,12 @@ const TeamList = () => {
 
   return (
     <div className="team-list">
-      <button onClick={handleRandomize}>Randomize Flights</button>
+      <button onClick={handleRandomize}>Randomize</button>
       <div>
         <ul className="team-list-collection">
           {teams &&
             teams.map((team, index) => (
-              <li key={index}>
+              <li className="team-list-team-unit" key={index}>
                 <h3>Flight {index + 1}</h3>
                 <ul className="team-list-unit">
                   {team.map((player, index) => (

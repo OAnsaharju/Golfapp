@@ -10,21 +10,32 @@ const StatsList = () => {
     dispatch(fetchPlayersAsync());
   }, [dispatch]);
 
+  const playerLabels = ["name", "hcp", "club"];
+  const statsLabels = [
+    "wins",
+    "attendance",
+    "worstplacement",
+    "bestscore",
+    "worstscore",
+  ];
+
   return (
     <div className="stat-list-container">
-      <h2>statistics</h2>
-      {players.map((player) => (
-        <div className="player-stat-list" key={player._id}>
-          <h4>Name:</h4> <p>{player.playerinfo.name}</p>
-          <h4>Hcp:</h4> <p>{player.playerinfo.hcp}</p>
-          <h4>Club:</h4> <p>{player.playerinfo.club}</p>
-          <h4>Wins:</h4> <p>{player.stats.wins}</p>
-          <h4>Attendance:</h4> <p>{player.stats.attendance}</p>
-          <h4>Worst placement:</h4> <p>{player.stats.worstplacement}</p>
-          <h4>Best score:</h4> <p>{player.stats.bestscore}</p>
-          <h4>Worst score:</h4> <p>{player.stats.worstscore}</p>
-        </div>
-      ))}
+      <h2 className="stats-main-label">Statistics</h2>
+      <div className="stat-collection">
+        {[...playerLabels, ...statsLabels].map((label) => (
+          <div key={label} className="player-stat-items">
+            <h4>{label}</h4>
+            {players.map((player) =>
+              player.playerinfo[label] !== undefined ? (
+                <p key={player._id}>{player.playerinfo[label]}</p>
+              ) : (
+                <p key={player._id}>{player.stats[label]}</p>
+              )
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
