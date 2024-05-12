@@ -12,7 +12,7 @@ app.use(express.json());
 
 const database = (module.exports = () => {
   try {
-    mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true });
+    mongoose.connect(process.env.ATLAS_URI);
     console.log("Server Connected");
   } catch (error) {
     console.log("Error", error);
