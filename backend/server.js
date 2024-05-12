@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 
 require("dotenv").config();
+console.log("Jotain");
 app.use(cors());
 port = 4000;
 app.use(express.json());
