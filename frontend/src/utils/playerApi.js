@@ -1,6 +1,6 @@
 const postPlayer = async (playerData) => {
   try {
-    const response = await fetch("http://localhost:4000/api/players", {
+    const response = await fetch("https://golfapp.onrender.com/api/players", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -21,7 +21,7 @@ const postPlayer = async (playerData) => {
 
 const fetchPlayers = async () => {
   try {
-    const response = await fetch("http://localhost:4000/api/players");
+    const response = await fetch("https://golfapp.onrender.com/api/players");
     if (!response.ok) {
       throw new Error("failed to fetch players");
     }

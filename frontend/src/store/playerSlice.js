@@ -20,7 +20,7 @@ export const addPlayerAsync = createAsyncThunk(
 export const deletePlayerAsync = createAsyncThunk(
   "player/deletePlayer",
   async (playerId) => {
-    await fetch(`http://localhost:4000/api/players/${playerId}`, {
+    await fetch(`https://golfapp.onrender.com/api/players/${playerId}`, {
       method: "DELETE",
     });
     return playerId;
