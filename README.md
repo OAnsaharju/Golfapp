@@ -53,6 +53,7 @@ Visit `http://localhost:3000` in your web browser to access the Golfapp.
 
 - **User Profiles**: Create personalized profiles to track progress and compare stats with friends.
 - **Statistics**: Check out some additional statistics for players in statistics page.
+- **Randomizer**: You can randomize the players for flights automatically.
 
 
 ## Contributing
