@@ -16,7 +16,6 @@ There is now a working demo, but it is not responsive yet. Responsive design is 
 2. [Usage](#usage)
 3. [Features](#features)
 4. [Contributing](#contributing)
-5. [License](#license)
 
 ## Installation
 
@@ -52,10 +51,9 @@ Visit `http://localhost:3000` in your web browser to access the Golfapp.
 
 ## Features
 
-- **Score Tracking**: Record and manage your golf scores for each round.
-- **Statistics Analysis**: View detailed statistics and insights into your performance.
 - **User Profiles**: Create personalized profiles to track progress and compare stats with friends.
-- **Responsive Design**: Developing responsive desing is underway.
+- **Statistics**: Check out some additional statistics for players in statistics page.
+
 
 ## Contributing
 
