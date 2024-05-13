@@ -8,7 +8,7 @@ The Golfapp is a web-based application built using React JS, MongoDB, CSS, Redux
 and i thought it would be cool to have a dedicated golf application for our anual golf competition! Other than the team-builder functionality the app has a page for tracking various statistics (This part will be heavily modified and developed further!).
 The plan is to develope more in the future including image-gallery, blog-section, and better statistic tracking. 
 
-At the moment there is no working demo but it's coming soon!
+There is now a working demo, but it is not responsive yet. Responsive design is on it's way!
 
 ## Table of Contents
 
