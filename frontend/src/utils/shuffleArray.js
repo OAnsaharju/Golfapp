@@ -8,4 +8,4 @@ const shuffleArray = (array) => {
   return array;
 };
 
-export default shuffleArray;
+module.exports = shuffleArray;
