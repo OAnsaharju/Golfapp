@@ -1,38 +1,27 @@
-import React, { useEffect } from "react";
-import { fetchPlayersAsync, deletePlayerAsync } from "../store/playerSlice";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 
-const PlayerList = () => {
-  const dispatch = useDispatch();
-  const players = useSelector((state) => state.player.players);
-
-  useEffect(() => {
-    dispatch(fetchPlayersAsync());
-  }, [dispatch]);
-
-  const handleDelete = (id) => {
-    dispatch(deletePlayerAsync(id)).then(() => {
-      dispatch(fetchPlayersAsync());
-    });
-  };
-
+const PlayerList = ({ tempPlayers, onDelete }) => {
   return (
-    <div className="player-list">
-      <h2>Player list</h2>
-      <div className="player-list-labels">
-        <h4>Name:</h4>
-        <h4>Hcp:</h4>
-        <h4>Club:</h4>
-        <h4>Remove :</h4>
+    <div className="flex flex-col justify-center items-top md:mb-20">
+      <div>
+        <h1 className="text-lg font-bold pb-4">Player List</h1>
       </div>
-      {players.map((player) => (
-        <div className="player-list-item" key={player._id}>
-          <p>{player.playerinfo.name}</p>
-          <p>{player.playerinfo.hcp}</p>
-          <p>{player.playerinfo.club}</p>
-          <button onClick={() => handleDelete(player._id)}>Delete</button>
-        </div>
-      ))}
+      <div className="flex flex-col p-2 border-black border rounded-lg shadow-lg bg-white justify-between items-center max-h-96 overflow-y-auto">
+        {tempPlayers.map((player) => (
+          <div
+            className="p-2 flex justify-between items-center w-full text-black"
+            key={player._id}
+          >
+            <p className="pr-2 underline">{player.playerinfo.name}</p>
+            <button
+              className="hover:underline rounded-lg border-black border border-1 p-1 text-black"
+              onClick={() => onDelete(player._id)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
