@@ -10,8 +10,9 @@ const StatsList = () => {
     dispatch(fetchPlayersAsync());
   }, [dispatch]);
 
-  const playerLabels = ["name", "hcp", "club"];
-  const statsLabels = [
+  const labels = [
+    "hcp",
+    "club",
     "wins",
     "attendance",
     "worstplacement",
@@ -20,22 +21,24 @@ const StatsList = () => {
   ];
 
   return (
-    <div className="stat-list-container">
-      <h2 className="stats-main-label">Statistics</h2>
-      <div className="stat-collection">
-        {[...playerLabels, ...statsLabels].map((label) => (
-          <div key={label} className="player-stat-items">
-            <h4>{label}</h4>
-            {players.map((player) =>
-              player.playerinfo[label] !== undefined ? (
-                <p key={player._id}>{player.playerinfo[label]}</p>
-              ) : (
-                <p key={player._id}>{player.stats[label]}</p>
-              )
-            )}
-          </div>
+    <div>
+      <ul className="list-disc pl-5">
+        {players.map((player) => (
+          <li key={player._id} className="mb-4">
+            <strong>{player.playerinfo.name}</strong>
+            <ul className="list-disc pl-5 mt-2">
+              {labels.map((label) => (
+                <li key={label}>
+                  <span className="font-semibold">{label}:</span>{" "}
+                  {player.playerinfo[label] !== undefined
+                    ? player.playerinfo[label]
+                    : player.stats[label]}
+                </li>
+              ))}
+            </ul>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

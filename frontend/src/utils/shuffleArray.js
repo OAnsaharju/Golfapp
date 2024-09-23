@@ -1,4 +1,4 @@
-// function to randomize array of players using Fisher-Yates algo.
+// function to randomize array using Fisher-Yates algo.
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {

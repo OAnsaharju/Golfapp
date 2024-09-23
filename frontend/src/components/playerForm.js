@@ -43,85 +43,106 @@ export const PlayerForm = ({ player }) => {
     setWorstscore("");
   };
   return (
-    <form className="player-form" onSubmit={handleSubmit}>
-      <h2>Player form</h2>
-      <p> * = not required</p>
-      <label className="form-label">
-        Name:
-        <input
-          type="text"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
+    <form
+      className="md:w-[80%] flex flex-col justify-center items-center md:mb-20 mt-20"
+      onSubmit={handleSubmit}
+    >
+      <ul className=" p-2 space-y-1">
+        <li>
+          <h2 className="text-lg font-bold">Player form</h2>
+          <p className="text-sm text-gray-500">* = not required</p>
+        </li>
 
-      <label className="form-label">
-        Hcp:
-        <input
-          type="number"
-          required
-          value={hcp}
-          onChange={(e) => setHcp(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Name:</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="text"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </li>
 
-      <label className="form-label">
-        Club:{" "}
-        <input
-          type="text"
-          required
-          value={club}
-          onChange={(e) => setClub(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Hcp:</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="number"
+            required
+            value={hcp}
+            onChange={(e) => setHcp(e.target.value)}
+          />
+        </li>
 
-      <label className="form-label">
-        Wins: *
-        <input
-          type="number"
-          value={wins}
-          onChange={(e) => setWins(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Club:</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="text"
+            required
+            value={club}
+            onChange={(e) => setClub(e.target.value)}
+          />
+        </li>
 
-      <label className="form-label">
-        Attendance: *
-        <input
-          type="number"
-          value={attendance}
-          onChange={(e) => setAttendance(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Wins: *</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="number"
+            value={wins}
+            onChange={(e) => setWins(e.target.value)}
+          />
+        </li>
 
-      <label className="form-label">
-        Worst Placement: *
-        <input
-          type="number"
-          value={worstplacement}
-          onChange={(e) => setWorstplacement(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Attendance: *</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="number"
+            value={attendance}
+            onChange={(e) => setAttendance(e.target.value)}
+          />
+        </li>
 
-      <label className="form-label">
-        Best Score:*
-        <input
-          type="number"
-          value={bestscore}
-          onChange={(e) => setBestscore(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Worst Placement: *</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="number"
+            value={worstplacement}
+            onChange={(e) => setWorstplacement(e.target.value)}
+          />
+        </li>
 
-      <label className="form-label">
-        Worst Score: *
-        <input
-          type="number"
-          value={worstscore}
-          onChange={(e) => setWorstscore(e.target.value)}
-        />
-      </label>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Best Score: *</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="number"
+            value={bestscore}
+            onChange={(e) => setBestscore(e.target.value)}
+          />
+        </li>
 
-      <button>Add Player</button>
+        <li className="flex items-center">
+          <label className="w-2/4 text-left">Worst Score: *</label>
+          <input
+            className="flex-grow text-black border border-black rounded-lg shadow-lg p-2 ml-4"
+            type="number"
+            value={worstscore}
+            onChange={(e) => setWorstscore(e.target.value)}
+          />
+        </li>
+      </ul>
+
+      <button
+        className="border-black text-black border rounded-lg shadow-lg
+      m-2 p-2 hover:underline bg-white"
+      >
+        Add Player
+      </button>
     </form>
   );
 };
