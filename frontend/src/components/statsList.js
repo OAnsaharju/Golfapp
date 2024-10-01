@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchPlayersAsync } from "../store/playerSlice";
+import { fetchPlayersAsync, deletePlayerAsync } from "../store/playerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const StatsList = () => {
@@ -9,6 +9,12 @@ const StatsList = () => {
   useEffect(() => {
     dispatch(fetchPlayersAsync());
   }, [dispatch]);
+
+  const handleDelete = (id) => {
+    dispatch(deletePlayerAsync(id)).then(() => {
+      dispatch(fetchPlayersAsync());
+    });
+  };
 
   const labels = [
     "hcp",
@@ -35,6 +41,12 @@ const StatsList = () => {
                     : player.stats[label]}
                 </li>
               ))}
+              <button
+                className="border-white border rounded-lg p-1 hover:bg-white hover:text-black transition duration-150"
+                onClick={() => handleDelete(player._id)}
+              >
+                Delete
+              </button>
             </ul>
           </li>
         ))}

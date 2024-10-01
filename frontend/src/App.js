@@ -14,12 +14,9 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        {/* Main wrapper with flex and column layout */}
         <div className="flex flex-col min-h-screen">
-          {/* Navbar - fixed at the top */}
           <Navbar />
 
-          {/* Main content area with flex-grow and background gradient */}
           <main className="flex-grow bg-[#4B5B4C] text-gray-200 min-h-screen p-5">
             <Switch>
               <Route path="/content">
@@ -39,8 +36,6 @@ function App() {
               </Route>
             </Switch>
           </main>
-
-          {/* Footer - fixed at the bottom */}
           <Footer />
         </div>
       </Router>

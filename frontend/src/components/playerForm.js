@@ -29,8 +29,6 @@ export const PlayerForm = ({ player }) => {
       stats: { wins, attendance, worstplacement, bestscore, worstscore },
     };
 
-    console.log("Payload being dispatched: ", playerData);
-
     await dispatch(addPlayerAsync(playerData));
     dispatch(fetchPlayersAsync());
     setName("");

@@ -56,10 +56,6 @@ const playerSlice = createSlice({
       .addCase(fetchPlayersAsync.fulfilled, (state, action) => {
         state.loading = false;
         state.players = action.payload;
-        console.log(
-          "action.payload when fetching after adding: ",
-          action.payload
-        );
       })
       .addCase(fetchPlayersAsync.rejected, (state, action) => {
         state.loading = false;
